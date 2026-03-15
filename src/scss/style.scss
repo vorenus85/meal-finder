@@ -1,3 +1,5 @@
+@import 'reset';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -96,6 +98,14 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin-top: 16px;
+
+  &.loading {
+    display: flex;
+
+    .meal-card {
+      display: none;
+    }
+  }
 }
 
 .meal-card {
@@ -108,4 +118,71 @@ body {
   height: 120px;
   background: #ddd;
   margin-bottom: 10px;
+}
+
+.meal-image img {
+  object-fit: cover;
+  aspect-ratio: 16/10;
+}
+
+/* LOADER */
+.loader-container {
+  padding-top: 2rem;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 45px;
+  display: inline-block;
+  aspect-ratio: 0.75;
+  --c: no-repeat linear-gradient(#000 0 0);
+  background:
+    var(--c) 0% 50%,
+    var(--c) 50% 50%,
+    var(--c) 100% 50%;
+  animation: loader 1s infinite linear alternate;
+}
+
+@keyframes loader {
+  0% {
+    background-size:
+      20% 50%,
+      20% 50%,
+      20% 50%;
+  }
+  20% {
+    background-size:
+      20% 20%,
+      20% 50%,
+      20% 50%;
+  }
+  40% {
+    background-size:
+      20% 100%,
+      20% 20%,
+      20% 50%;
+  }
+  60% {
+    background-size:
+      20% 50%,
+      20% 100%,
+      20% 20%;
+  }
+  80% {
+    background-size:
+      20% 50%,
+      20% 50%,
+      20% 100%;
+  }
+  100% {
+    background-size:
+      20% 50%,
+      20% 50%,
+      20% 50%;
+  }
+}
+
+.loader-container {
+  width: 100%;
+  text-align: center;
 }

@@ -5,7 +5,6 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal Finder</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="header">
@@ -45,13 +44,19 @@
         <section class="categories">
           <h2>Categories</h2>
 
-          <div class="category-grid">
-            <div class="category-card">Beef</div>
-            <div class="category-card">Chicken</div>
-            <div class="category-card">Dessert</div>
-            <div class="category-card">Seafood</div>
-            <div class="category-card">Vegetarian</div>
-            <div class="category-card">Pasta</div>
+          <div class="category-grid" id="category-grid">
+            <button type="button" class="category-card">Beef</button>
+            <button type="button" class="category-card">Breakfast</button>
+            <button type="button" class="category-card">Chicken</button>
+            <button type="button" class="category-card">Dessert</button>
+            <button type="button" class="category-card">Miscellaneous</button>
+            <button type="button" class="category-card">Pasta</button>
+            <button type="button" class="category-card">Pork</button>
+            <button type="button" class="category-card">Seafood</button>
+            <button type="button" class="category-card">Side</button>
+            <button type="button" class="category-card">Starter</button>
+            <button type="button" class="category-card">Vegetarian</button>
+            <button type="button" class="category-card">Vegan</button>
           </div>
         </section>
 
@@ -59,7 +64,7 @@
         <section class="meals">
           <h2>Meals</h2>
 
-          <div class="meal-grid">
+          <div class="meal-grid" id="meal-grid">
             <div class="meal-card">
               <div class="meal-image"></div>
               <h3>Meal name</h3>

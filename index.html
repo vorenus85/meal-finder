@@ -4,10 +4,84 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>meal-finder</title>
+    <title>Meal Finder</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <header class="header">
+      <h1 class="app-title">Meal Finder</h1>
+    </header>
+
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h2>Filters</h2>
+
+        <div class="filter">
+          <label>Search</label>
+          <input type="text" placeholder="Search meal..." />
+        </div>
+
+        <div class="filter">
+          <label>Category</label>
+          <select>
+            <option>All</option>
+          </select>
+        </div>
+
+        <div class="filter">
+          <label>Area</label>
+          <select>
+            <option>All</option>
+          </select>
+        </div>
+
+        <button class="search-btn">Search</button>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main">
+        <!-- CATEGORIES -->
+        <section class="categories">
+          <h2>Categories</h2>
+
+          <div class="category-grid">
+            <div class="category-card">Beef</div>
+            <div class="category-card">Chicken</div>
+            <div class="category-card">Dessert</div>
+            <div class="category-card">Seafood</div>
+            <div class="category-card">Vegetarian</div>
+            <div class="category-card">Pasta</div>
+          </div>
+        </section>
+
+        <!-- MEALS -->
+        <section class="meals">
+          <h2>Meals</h2>
+
+          <div class="meal-grid">
+            <div class="meal-card">
+              <div class="meal-image"></div>
+              <h3>Meal name</h3>
+              <button>View recipe</button>
+            </div>
+
+            <div class="meal-card">
+              <div class="meal-image"></div>
+              <h3>Meal name</h3>
+              <button>View recipe</button>
+            </div>
+
+            <div class="meal-card">
+              <div class="meal-image"></div>
+              <h3>Meal name</h3>
+              <button>View recipe</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

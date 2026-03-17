@@ -16,8 +16,8 @@ export class FavoriteCard {
         <div class="meal-card-body">
           <h3 class="meal-title">${this.meal.strMeal}</h3>
           <div class="meal-actions">
-            <button class="show-meal-recipe material-symbols-outlined" >visibility</button>
-            <button class="remove-favorite material-symbols-outlined">delete</button>
+            <button class="show-meal-recipe material-symbols-outlined" title="View recipe">visibility</button>
+            <button class="remove-favorite material-symbols-outlined" title="Delete from favorites">delete</button>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export class MealCard {
         <h3 class="meal-title">${this.meal.strMeal}</h3>
         <div class="meal-actions">
           <button class="show-meal-recipe meal-recipe-btn" >View recipe</button>
-          <button class="meal-favorite-btn add-favorite material-symbols-outlined">favorite</button>
+          <button class="meal-favorite-btn add-favorite material-symbols-outlined" title="Add to favorites">favorite</button>
         </div>
         
       </div>

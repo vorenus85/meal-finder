@@ -6,6 +6,7 @@ import type { MealCardData } from '../models/MealCardData';
 import type { MealModel } from '../models/MealModel';
 import { MealEvents } from '../events/MealEvents';
 import { FavoriteService } from '../services/FavoriteService';
+import { getFavorites } from '../storage/favoritesApi';
 
 export class MealApp {
   private readonly api: MealApi;
@@ -23,7 +24,6 @@ export class MealApp {
     this.events = new MealEvents();
     this.favoriteService = new FavoriteService();
 
-    this.populateFirstLoad();
     this.filterByCategory();
 
     this.viewRecipe();
@@ -36,10 +36,16 @@ export class MealApp {
     let html = '';
 
     meals.forEach((meal) => {
-      html += new MealCard(meal).render();
+      html += new MealCard(meal, this.isFavorite(meal.idMeal)).render();
     });
 
     this.mealGrid.insertAdjacentHTML('afterbegin', html);
+  }
+
+  private isFavorite(idMeal: string): boolean {
+    const favorites = getFavorites();
+
+    return favorites.find((meal) => meal.idMeal === idMeal) !== undefined;
   }
 
   public showLoader(): void {
@@ -108,7 +114,7 @@ export class MealApp {
     modal.classList.add('active');
   }
 
-  private async populateFirstLoad(): Promise<void> {
+  public async populateFirstLoad(): Promise<void> {
     const { meals } = await this.api.getMealByMainIngredient('chicken_breast');
 
     this.showLoader();

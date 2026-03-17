@@ -35,10 +35,22 @@ export class FavoriteService {
 
     if (addBtn) {
       this.add(meal);
+      addBtn.classList.add('active');
     }
 
     if (removeBtn) {
       this.remove(meal);
+
+      const cardInList = document.querySelector(
+        `.meal-grid [data-id="${meal.idMeal}"]`,
+      );
+
+      const favBtn = cardInList?.querySelector('.meal-favorite-btn');
+
+      if (!favBtn) return;
+
+      favBtn?.classList.remove('active');
+      favBtn.disabled = false;
     }
     const favorites = getFavorites();
     this.render(favorites);

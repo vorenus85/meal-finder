@@ -1,4 +1,4 @@
-import { MealApp } from './app';
+import { MealApp } from './js/app/MealApp';
 import './scss/style.scss';
 
 document.addEventListener('DOMContentLoaded', () => {

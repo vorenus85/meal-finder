@@ -41,6 +41,11 @@
   font-weight: 600;
 }
 
+.meal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
 .meal-recipe-btn {
   background: var(--secondary-color);
   padding: var(--space-sm);
@@ -48,4 +53,14 @@
   border: 1px solid var(--secondary-color);
   font-weight: 400;
   color: #fff;
+}
+
+.meal-favorite-btn {
+  padding: 0px;
+  height: 35px;
+  width: 35px;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

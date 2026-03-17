@@ -50,9 +50,10 @@ export class MealModal {
                 )
                 .join('')}
             </ul>
+            <hr class="separator" />
 
             <h3>Instructions</h3>
-            <p>${this.meal.instructions}</p>
+            <p class="introductions">${this.meal.instructions}</p>
           </div>
         </div>
       </div>

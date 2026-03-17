@@ -4,11 +4,15 @@
   padding: 0;
 }
 
+html {
+  font-size: 14px;
+  line-height: 1.25;
+}
+
 body {
   background: #fff;
   font-family: var(--secondary-font);
-  line-height: 1.25;
-  font-size: 14px;
+  color: var(--color-dark);
 }
 
 h1,

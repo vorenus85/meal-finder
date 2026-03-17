@@ -7,3 +7,13 @@
 .sidebar h2 {
   margin-bottom: 0.5rem;
 }
+
+.favorites-list {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.favorites-empty {
+  padding: 0.5rem 0;
+}

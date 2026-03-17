@@ -1,4 +1,4 @@
-import { mapMeal } from '../utils/mapMeal';
+import { MealMapper } from '../utils/MealMapper';
 
 const MEAL_API = import.meta.env.VITE_THEMEALDB_API;
 
@@ -25,6 +25,6 @@ export class MealApi {
 
     if (!data.meals) return null;
 
-    return mapMeal(data.meals[0]);
+    return MealMapper(data.meals[0]);
   }
 }

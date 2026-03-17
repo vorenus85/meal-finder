@@ -1,25 +1,31 @@
-import { MealApi } from './api/mealApi';
-import { Loader } from './components/Loader';
-import { MealCard } from './components/MealCard';
-import { MealModal } from './components/MealModal';
-import type { MealCardData } from './models/MealCardData';
-import type { MealModel } from './models/MealModel';
+import { MealApi } from '../api/mealApi';
+import { Loader } from '../components/Loader';
+import { MealCard } from '../components/MealCard';
+import { MealModal } from '../components/MealModal';
+import type { MealCardData } from '../models/MealCardData';
+import type { MealModel } from '../models/MealModel';
+import { MealEvents } from '../events/MealEvents';
+import { FavoriteService } from '../services/FAvoriteService';
 
 export class MealApp {
   private readonly api: MealApi;
 
   private readonly mealGrid: HTMLElement;
   private readonly categoryGrid: HTMLElement;
+  events: MealEvents;
+  favoriteService: FavoriteService;
 
   constructor() {
     this.categoryGrid = document.getElementById('category-grid') as HTMLElement;
     this.mealGrid = document.getElementById('meal-grid') as HTMLElement;
 
     this.api = new MealApi();
+    this.events = new MealEvents();
+    this.favoriteService = new FavoriteService();
 
     this.filterByCategory();
     this.viewRecipe();
-    this.initModalEvents();
+    this.events.initModalEvent();
   }
 
   public renderMealCards(meals: MealCardData[]): void {
@@ -74,9 +80,16 @@ export class MealApp {
 
       if (target.classList.contains('show-meal-recipe')) {
         target.disabled = true;
-        const mealId = target.dataset.id;
 
-        const result = await this.api.getMealById(mealId as string);
+        const mealCard = target.closest('.meal-card') as HTMLElement;
+        const mealId = mealCard?.dataset.id;
+
+        if (!mealId) {
+          console.error('Meal ID not found');
+          return;
+        }
+
+        const result = await this.api.getMealById(mealId);
         this.renderModal(result as MealModel);
       }
     });
@@ -91,25 +104,5 @@ export class MealApp {
 
     document.body.classList.add('modal-active');
     modal.classList.add('active');
-  }
-
-  public initModalEvents(): void {
-    document.addEventListener('click', (e) => {
-      const target = e.target as HTMLElement;
-
-      if (
-        target.classList.contains('meal-modal-overlay') ||
-        target.classList.contains('meal-modal-close')
-      ) {
-        document.getElementById('meal-modal')?.classList.remove('active');
-        document.body.classList.remove('modal-active');
-        const buttons =
-          document.querySelectorAll<HTMLButtonElement>('.show-meal-recipe');
-
-        buttons.forEach((btn) => {
-          btn.disabled = false;
-        });
-      }
-    });
   }
 }

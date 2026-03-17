@@ -1,8 +1,8 @@
-import type { Ingredient } from '../models/ingredient';
-import type { Meal } from '../models/Meal';
+import type { Ingredient } from '../models/Ingredient';
+import type { Meal } from '../models/MealApiResponse';
 import type { MealModel } from '../models/MealModel';
 
-export function mapMeal(meal: Meal): MealModel {
+export function MealMapper(meal: Meal): MealModel {
   const ingredients: Ingredient[] = [];
 
   for (let i = 1; i <= 20; i++) {

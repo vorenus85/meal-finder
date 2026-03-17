@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
   <body>
     <header class="header">
@@ -30,25 +34,25 @@
         <section class="module favorites">
           <h2>Favorites</h2>
           <hr class="separator" />
-          <div class="favorites-list">
-            <div class="favorite-item">
-              <img src="meal.jpg" alt="Meal" />
-              <div class="favorite-info">
-                <span class="meal-name">Chicken Curry</span>
-                <button class="remove-favorite">✕</button>
+          <div class="favorites-container">
+            <div class="favorites-list" id="favorites-list">
+              <div class="favorite-item">
+                <img src="meal.jpg" alt="Meal" />
+                <div class="favorite-info">
+                  <span class="meal-name">Chicken Curry</span>
+                  <button class="remove-favorite">✕</button>
+                </div>
               </div>
-            </div>
 
-            <div class="favorite-item">
-              <img src="meal.jpg" alt="Meal" />
-              <div class="favorite-info">
-                <span class="meal-name">Beef Stroganoff</span>
-                <button class="remove-favorite">✕</button>
+              <div class="favorite-item">
+                <img src="meal.jpg" alt="Meal" />
+                <div class="favorite-info">
+                  <span class="meal-name">Beef Stroganoff</span>
+                  <button class="remove-favorite">✕</button>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="favorites-empty">No favorite meals yet</div>
         </section>
       </aside>
 
@@ -60,6 +64,7 @@
             Browse categories, explore recipes, and save the meals you love.
           </p>
         </section>
+        <hr class="separator" />
         <!-- CATEGORIES -->
         <section class="categories">
           <h2>Categories</h2>

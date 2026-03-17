@@ -1,7 +1,9 @@
 import { MealApi } from './api/mealApi';
 import { Loader } from './components/Loader';
 import { MealCard } from './components/MealCard';
-import type { Meal } from './types/meal';
+import { MealModal } from './components/MealModal';
+import type { MealCardData } from './models/MealCardData';
+import type { MealModel } from './models/MealModel';
 
 export class MealApp {
   private readonly api: MealApi;
@@ -16,9 +18,11 @@ export class MealApp {
     this.api = new MealApi();
 
     this.filterByCategory();
+    this.viewRecipe();
+    this.initModalEvents();
   }
 
-  public renderMealCards(meals: Meal[]): void {
+  public renderMealCards(meals: MealCardData[]): void {
     this.mealGrid.innerHTML = '';
 
     let html = '';
@@ -60,7 +64,52 @@ export class MealApp {
       setTimeout(() => {
         this.renderMealCards(meals);
         this.mealGrid.classList.remove('loading');
-      }, 500);
+      }, 250);
+    });
+  }
+
+  public viewRecipe(): void {
+    document.addEventListener('click', async (event) => {
+      const target = event.target as HTMLButtonElement;
+
+      if (target.classList.contains('show-meal-recipe')) {
+        target.disabled = true;
+        const mealId = target.dataset.id;
+
+        const result = await this.api.getMealById(mealId as string);
+        this.renderModal(result as MealModel);
+      }
+    });
+  }
+
+  public renderModal(meal: MealModel): void {
+    const modal = document.getElementById('meal-modal');
+
+    if (!modal) return;
+
+    modal.innerHTML = new MealModal(meal).render();
+
+    document.body.classList.add('modal-active');
+    modal.classList.add('active');
+  }
+
+  public initModalEvents(): void {
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+
+      if (
+        target.classList.contains('meal-modal-overlay') ||
+        target.classList.contains('meal-modal-close')
+      ) {
+        document.getElementById('meal-modal')?.classList.remove('active');
+        document.body.classList.remove('modal-active');
+        const buttons =
+          document.querySelectorAll<HTMLButtonElement>('.show-meal-recipe');
+
+        buttons.forEach((btn) => {
+          btn.disabled = false;
+        });
+      }
     });
   }
 }

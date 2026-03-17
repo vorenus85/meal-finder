@@ -9,37 +9,49 @@
   <body>
     <header class="header">
       <h1 class="app-title">Meal Finder</h1>
+      <div class="filter">
+        <form action="" id="filter">
+          <input type="text" placeholder="Search meal by main ingredient..." />
+          <button type="submit">Search</button>
+          <button type="reset">✕</button>
+        </form>
+      </div>
     </header>
 
     <div class="layout">
       <!-- SIDEBAR -->
-      <aside class="sidebar">
-        <h2>Filters</h2>
+      <aside class="sidebar favorites">
+        <h2>Favorites</h2>
 
-        <div class="filter">
-          <label>Search</label>
-          <input type="text" placeholder="Search meal..." />
+        <div class="favorites-list">
+          <div class="favorite-item">
+            <img src="meal.jpg" alt="Meal" />
+            <div class="favorite-info">
+              <span class="meal-name">Chicken Curry</span>
+              <button class="remove-favorite">✕</button>
+            </div>
+          </div>
+
+          <div class="favorite-item">
+            <img src="meal.jpg" alt="Meal" />
+            <div class="favorite-info">
+              <span class="meal-name">Beef Stroganoff</span>
+              <button class="remove-favorite">✕</button>
+            </div>
+          </div>
         </div>
 
-        <div class="filter">
-          <label>Category</label>
-          <select>
-            <option>All</option>
-          </select>
-        </div>
-
-        <div class="filter">
-          <label>Area</label>
-          <select>
-            <option>All</option>
-          </select>
-        </div>
-
-        <button class="search-btn">Search</button>
+        <div class="favorites-empty">No favorite meals yet</div>
       </aside>
 
       <!-- MAIN -->
       <main class="main">
+        <section class="welcome">
+          <h1>Find Your Next Favorite Meal</h1>
+          <p>
+            Browse categories, explore recipes, and save the meals you love.
+          </p>
+        </section>
         <!-- CATEGORIES -->
         <section class="categories">
           <h2>Categories</h2>
@@ -64,28 +76,11 @@
         <section class="meals">
           <h2>Meals</h2>
 
-          <div class="meal-grid" id="meal-grid">
-            <div class="meal-card">
-              <div class="meal-image"></div>
-              <h3>Meal name</h3>
-              <button>View recipe</button>
-            </div>
-
-            <div class="meal-card">
-              <div class="meal-image"></div>
-              <h3>Meal name</h3>
-              <button>View recipe</button>
-            </div>
-
-            <div class="meal-card">
-              <div class="meal-image"></div>
-              <h3>Meal name</h3>
-              <button>View recipe</button>
-            </div>
-          </div>
+          <div class="meal-grid" id="meal-grid"></div>
         </section>
       </main>
     </div>
+    <div class="meal-modal" id="meal-modal"></div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

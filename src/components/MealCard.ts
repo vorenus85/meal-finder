@@ -1,9 +1,9 @@
-import type { Meal } from '../types/meal';
+import type { MealCardData } from '../models/MealCardData';
 
 export class MealCard {
-  private readonly meal: Meal;
+  private readonly meal: MealCardData;
 
-  constructor(meal: Meal) {
+  constructor(meal: MealCardData) {
     this.meal = meal;
   }
 

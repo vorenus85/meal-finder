@@ -8,14 +8,27 @@
 body {
   background: var(--color-bg);
   font-family: var(--secondary-font);
+  line-height: 1.25;
 }
 
 h1,
 h2,
 h3,
 h4,
-h4,
 h5,
 h6 {
   font-family: var(--primary-font);
+}
+
+button {
+  padding: var(--space-sm) 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
 }

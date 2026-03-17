@@ -6,7 +6,12 @@
 
 .main {
   padding: var(--space-xl);
+
+  h1 {
+    padding-bottom: 1rem;
+  }
 }
 
 .welcome {
+  margin-bottom: 2rem;
 }

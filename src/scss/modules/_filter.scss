@@ -1,7 +1,3 @@
-.filter {
-  margin-bottom: var(--space-md);
-}
-
 .filter-form {
   display: flex;
   align-items: center;
@@ -11,6 +7,7 @@
 .filter-form input {
   flex: 1;
   max-width: 250px;
+  width: 250px;
   padding: var(--space-sm) 12px;
   border: 1px solid #ccc;
   border-radius: 6px;

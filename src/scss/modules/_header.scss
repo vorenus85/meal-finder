@@ -6,7 +6,9 @@
 }
 
 .app-title {
-  font-size: 20px;
+  font-size: 2rem;
   white-space: nowrap;
   margin-right: auto;
+  display: flex;
+  align-items: center;
 }

@@ -1,0 +1,86 @@
+.meal-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.meal-modal.active {
+  display: block;
+}
+
+.meal-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-bg);
+}
+
+.meal-modal-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: var(--modal-max-width);
+  margin: 40px auto;
+
+  background: var(--color-surface);
+  border-radius: var(--radius);
+
+  display: flex;
+  flex-direction: column;
+
+  max-height: var(--modal-max-height);
+  overflow: hidden;
+}
+
+.meal-modal-header {
+  position: relative;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.meal-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.meal-modal-body {
+  padding: var(--space-lg);
+  overflow-y: auto;
+}
+
+.meal-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.meal-modal-body iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  margin-bottom: var(--space-md);
+}
+
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredient-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ingredient-list img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* scroll lock */
+.modal-active {
+  overflow: hidden;
+}

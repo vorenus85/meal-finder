@@ -1,0 +1,28 @@
+:root {
+  /* fonts */
+  --primary-font: 'Poppins', sans-serif;
+  --secondary-font: 'Lato', sans-serif;
+
+  /* colors */
+  --color-bg: #f5f5f5;
+  --color-surface: #fff;
+  --color-border: #ddd;
+  --color-border-light: #eee;
+  --color-dark: #222;
+  --color-primary: #333;
+
+  /* spacing */
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+
+  /* layout */
+  --sidebar-width: 250px;
+  --radius: 10px;
+
+  /* modal */
+  --modal-max-width: 700px;
+  --modal-max-height: 90vh;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+}

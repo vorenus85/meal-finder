@@ -1,0 +1,31 @@
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: var(--space-md);
+
+  &.loading {
+    display: flex;
+
+    .meal-card {
+      display: none;
+    }
+  }
+}
+
+.meal-card {
+  background: var(--color-surface);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+}
+
+.meal-image {
+  height: 120px;
+  background: var(--color-border);
+  margin-bottom: 10px;
+}
+
+.meal-image img {
+  object-fit: cover;
+  aspect-ratio: 16/10;
+}

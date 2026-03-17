@@ -1,0 +1,41 @@
+.filter {
+  margin-bottom: var(--space-md);
+}
+
+.filter-form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.filter-form input {
+  flex: 1;
+  max-width: 250px;
+  padding: var(--space-sm) 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.filter-form button {
+  padding: var(--space-sm) 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.2s ease;
+}
+
+.filter-form button[type='submit'] {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.filter-form button[type='reset'] {
+  background: #eee;
+  color: #333;
+}
+
+.filter-form button:hover {
+  opacity: 0.8;
+}

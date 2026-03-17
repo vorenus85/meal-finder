@@ -1,0 +1,12 @@
+.header {
+  background: var(--color-dark);
+  color: #fff;
+  padding: var(--space-md) var(--space-xl);
+  display: flex;
+}
+
+.app-title {
+  font-size: 20px;
+  white-space: nowrap;
+  margin-right: auto;
+}

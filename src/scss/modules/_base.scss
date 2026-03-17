@@ -2,13 +2,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
 }
 
 body {
-  background: var(--color-bg);
+  background: #fff;
   font-family: var(--secondary-font);
   line-height: 1.25;
+  font-size: 14px;
 }
 
 h1,
@@ -27,6 +27,7 @@ button {
   cursor: pointer;
   font-size: 14px;
   transition: all 0.2s;
+  color: var(--btn-color);
 
   &:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);

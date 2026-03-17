@@ -14,4 +14,21 @@
 
 .welcome {
   margin-bottom: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.module {
+  background: #fff;
+  padding: var(--space-md);
+  border-radius: calc(var(--radius) * 0.5);
+  box-shadow: var(--base-shadow);
+}
+
+.separator {
+  border: none;
+  height: 2px;
+  width: 100%;
+  background: var(--color-bg);
+  margin-bottom: 1rem;
 }

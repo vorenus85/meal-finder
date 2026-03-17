@@ -14,7 +14,10 @@ export class MealCard {
           <img src="${this.meal.strMealThumb}" alt="${this.meal.strMeal}">
         </div>
         <h3 class="meal-title">${this.meal.strMeal}</h3>
-        <button class="show-meal-recipe" data-id="${this.meal.idMeal}">View recipe</button>
+        <div class="meal-actions">
+          <button class="show-meal-recipe meal-recipe-btn" data-id="${this.meal.idMeal}">View recipe</button>
+        </div>
+        
       </div>
     `;
   }

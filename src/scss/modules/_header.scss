@@ -1,8 +1,8 @@
 .header {
-  background: var(--color-dark);
-  color: #fff;
+  background: #fff;
   padding: var(--space-md) var(--space-xl);
   display: flex;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .app-title {
@@ -11,4 +11,5 @@
   margin-right: auto;
   display: flex;
   align-items: center;
+  color: var(--primary-color);
 }

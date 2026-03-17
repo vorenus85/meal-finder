@@ -33,9 +33,9 @@ export class MealModal {
           }
 
           <div class="meal-modal-content">
-            <p class="meal-modal-category">
-              ${this.meal.category} • ${this.meal.area}
-            </p>
+            <div class="meal-modal-category">
+              <span>${this.meal.category} • ${this.meal.area}</span>
+            </div>
 
             <h3>Ingredients</h3>
             <ul class="ingredient-list">

@@ -23,14 +23,9 @@
   transition: opacity 0.2s ease;
 }
 
-.filter-form button[type='submit'] {
-  background: var(--color-primary);
+.filter-form button {
+  background: var(--secondary-color);
   color: #fff;
-}
-
-.filter-form button[type='reset'] {
-  background: #eee;
-  color: #333;
 }
 
 .filter-form button:hover {

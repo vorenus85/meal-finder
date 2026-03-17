@@ -62,10 +62,26 @@
   border-radius: 8px;
   margin-bottom: var(--space-md);
 }
+.meal-modal-category {
+  margin-bottom: 1rem;
+}
+
+.meal-modal-category span {
+  padding: calc(var(--space-sm) * 0.5) var(--space-sm);
+  border-radius: 25px;
+  background: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}
 
 .ingredient-list {
   list-style: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .ingredient-list li {

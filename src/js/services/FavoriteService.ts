@@ -18,7 +18,7 @@ export class FavoriteService {
     document.addEventListener('click', this.handleFavoriteClick);
   }
 
-  private handleFavoriteClick = (event: Event): void => {
+  private readonly handleFavoriteClick = (event: Event): void => {
     const target = event.target as HTMLElement;
 
     const addBtn = target.closest('.add-favorite');

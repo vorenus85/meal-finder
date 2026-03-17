@@ -5,7 +5,7 @@ import { MealModal } from '../components/MealModal';
 import type { MealCardData } from '../models/MealCardData';
 import type { MealModel } from '../models/MealModel';
 import { MealEvents } from '../events/MealEvents';
-import { FavoriteService } from '../services/FAvoriteService';
+import { FavoriteService } from '../services/FavoriteService';
 
 export class MealApp {
   private readonly api: MealApi;
@@ -23,7 +23,9 @@ export class MealApp {
     this.events = new MealEvents();
     this.favoriteService = new FavoriteService();
 
+    this.populateFirstLoad();
     this.filterByCategory();
+
     this.viewRecipe();
     this.events.initModalEvent();
   }
@@ -104,5 +106,25 @@ export class MealApp {
 
     document.body.classList.add('modal-active');
     modal.classList.add('active');
+  }
+
+  private async populateFirstLoad(): Promise<void> {
+    const { meals } = await this.api.getMealByMainIngredient('chicken_breast');
+
+    this.showLoader();
+
+    setTimeout(() => {
+      this.renderMealCards(this.getRandomItems(meals));
+      this.mealGrid.classList.remove('loading');
+    }, 250);
+  }
+
+  private getRandomItems<T>(array: T[], count: number = 6): T[] {
+    if (count >= array.length) {
+      return [...array];
+    }
+
+    const shuffled = [...array].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
   }
 }

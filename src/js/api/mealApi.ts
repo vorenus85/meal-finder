@@ -27,4 +27,16 @@ export class MealApi {
 
     return MealMapper(data.meals[0]);
   }
+
+  public async getMealByMainIngredient(mealId: string) {
+    const response = await fetch(`${MEAL_API}filter.php?i=${mealId}`);
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch meal by main ingredient');
+    }
+
+    const data = await response.json();
+
+    return data;
+  }
 }

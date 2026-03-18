@@ -8,10 +8,8 @@ import { toSnakeCase } from '../utils/toSnakeCase';
 
 export class MealApp {
   private readonly api: MealApi;
-
   private readonly mealGrid: HTMLElement;
   private readonly categoryGrid: HTMLElement;
-  private readonly gridLoader: HTMLElement;
   private readonly filterForm: HTMLFormElement;
   private readonly filterSubmit: HTMLButtonElement;
   private readonly filterInput: HTMLInputElement;
@@ -20,9 +18,6 @@ export class MealApp {
   favoriteService: FavoriteService;
 
   constructor() {
-    this.gridLoader = document.getElementById(
-      'loader-container',
-    ) as HTMLElement;
     this.categoryGrid = document.getElementById('category-grid') as HTMLElement;
 
     this.filterForm = document.getElementById('filter-form') as HTMLFormElement;

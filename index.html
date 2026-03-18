@@ -25,10 +25,15 @@
     <header class="header">
       <h1 class="app-title">Meal Finder</h1>
       <div class="filter">
-        <form action="" class="filter-form" id="filter">
-          <input type="text" placeholder="Search meal by main ingredient..." />
-          <button type="submit">Search</button>
-          <button type="reset">✕</button>
+        <form action="#" class="filter-form" id="filter-form">
+          <input
+            type="text"
+            id="filter-input"
+            required
+            placeholder="Search meal by main ingredient..."
+          />
+          <button id="filter-submit" type="submit">Search</button>
+          <button id="filter-reset" type="reset">✕</button>
         </form>
       </div>
     </header>
@@ -96,6 +101,7 @@
 
           <div class="meal-grid" id="meal-grid"></div>
         </section>
+        <section id="messages"></section>
       </main>
     </div>
     <div class="meal-modal" id="meal-modal"></div>

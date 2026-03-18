@@ -69,3 +69,13 @@
     color: #fff;
   }
 }
+
+.meal-error {
+  background: #ec7c7c;
+  border: 1px solid #f35d5d;
+  color: var(--color-surface);
+  text-align: left;
+  font-weight: 500;
+  padding: var(--space-md);
+  border-radius: calc(var(--radius) / 2);
+}

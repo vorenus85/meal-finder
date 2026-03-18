@@ -1,4 +1,5 @@
 import type { MealModel } from '../models/MealModel';
+import { toSnakeCase } from '../utils/toSnakeCase';
 
 export class MealModal {
   private readonly meal: MealModel;
@@ -43,7 +44,7 @@ export class MealModal {
                 .map(
                   (i) => `
                     <li>
-                      <img src="https://themealdb.com/images/ingredients/${this.toSnakeCase(i.name)}-small.png" />
+                      <img src="https://themealdb.com/images/ingredients/${toSnakeCase(i.name)}-small.png" />
                       ${i.measure} ${i.name}
                     </li>
                   `,
@@ -64,9 +65,5 @@ export class MealModal {
   private getYoutubeEmbedUrl(url: string): string {
     const videoId = url.split('v=')[1]?.split('&')[0];
     return `https://www.youtube.com/embed/${videoId}`;
-  }
-
-  private toSnakeCase(str: string): string {
-    return str.trim().toLowerCase().replaceAll(/\s+/g, '_');
   }
 }

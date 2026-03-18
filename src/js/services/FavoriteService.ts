@@ -15,7 +15,15 @@ export class FavoriteService {
   }
 
   public initFavoriteEvents(): void {
-    document.addEventListener('click', this.handleFavoriteClick);
+    document.addEventListener('click', (event: Event) => {
+      const button = (event.target as HTMLButtonElement).closest(
+        '.favorite-btn',
+      ) as HTMLButtonElement;
+
+      if (!button) return;
+
+      this.handleFavoriteClick(event);
+    });
   }
 
   private readonly handleFavoriteClick = (event: Event): void => {
@@ -39,19 +47,18 @@ export class FavoriteService {
     }
 
     if (removeBtn) {
+      console.log('remove');
       this.remove(meal);
 
       const cardInList = document.querySelector(
         `.meal-grid [data-id="${meal.idMeal}"]`,
       );
 
-      const favBtn = cardInList?.querySelector('.meal-favorite-btn');
-
-      if (!favBtn) return;
+      const favBtn = cardInList?.querySelector('.favorite-btn');
 
       favBtn?.classList.remove('active');
-      favBtn.disabled = false;
     }
+    button.disabled = false;
     const favorites = getFavorites();
     this.render(favorites);
   };

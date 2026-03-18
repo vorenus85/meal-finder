@@ -148,6 +148,8 @@ export class MealApp {
 
   private resetCategoryCardActive() {
     const categoryCards = this.categoryGrid.querySelectorAll('.category-card');
-    categoryCards.forEach((c) => c.classList.remove('active'));
+    categoryCards.forEach((c) => {
+      c.classList.remove('active');
+    });
   }
 }

@@ -1,9 +1,9 @@
 export class MealEvents {
   constructor() {
-    this.initModalEvent();
+    this.closeRecipeModal();
   }
 
-  public initModalEvent(): void {
+  public closeRecipeModal(): void {
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
 

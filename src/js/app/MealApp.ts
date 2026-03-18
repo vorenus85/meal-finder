@@ -7,6 +7,7 @@ import type { MealModel } from '../models/MealModel';
 import { MealEvents } from '../events/MealEvents';
 import { FavoriteService } from '../services/FavoriteService';
 import { getFavorites } from '../storage/favoritesApi';
+import { getRandomItems } from '../utils/getRandomItems';
 
 export class MealApp {
   private readonly api: MealApi;
@@ -27,7 +28,6 @@ export class MealApp {
     this.filterByCategory();
 
     this.viewRecipe();
-    this.events.initModalEvent();
   }
 
   public renderMealCards(meals: MealCardData[]): void {
@@ -120,17 +120,8 @@ export class MealApp {
     this.showLoader();
 
     setTimeout(() => {
-      this.renderMealCards(this.getRandomItems(meals));
+      this.renderMealCards(getRandomItems(meals));
       this.mealGrid.classList.remove('loading');
     }, 250);
-  }
-
-  private getRandomItems<T>(array: T[], count: number = 6): T[] {
-    if (count >= array.length) {
-      return [...array];
-    }
-
-    const shuffled = [...array].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
   }
 }

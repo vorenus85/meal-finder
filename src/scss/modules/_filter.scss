@@ -5,7 +5,6 @@
 }
 
 .filter-form input {
-  flex: 1;
   max-width: 250px;
   width: 250px;
   padding: var(--space-sm) 12px;
@@ -15,12 +14,17 @@
 }
 
 .filter-form button {
-  padding: var(--space-sm) 12px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
   transition: opacity 0.2s ease;
+  padding: 0px;
+  height: 35px;
+  flex: 0 0 35px;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter-form button {
@@ -30,4 +34,17 @@
 
 .filter-form button:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .filter-form #filter-submit {
+    margin-left: auto;
+  }
+
+  .filter-form input {
+    flex: 1;
+    max-width: 200px;
+    width: 200px;
+    margin-right: auto;
+  }
 }

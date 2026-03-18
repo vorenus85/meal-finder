@@ -11,6 +11,16 @@
       display: none;
     }
   }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .meal-card {

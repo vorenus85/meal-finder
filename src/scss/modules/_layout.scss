@@ -32,3 +32,18 @@
   background: var(--color-bg);
   margin-bottom: 1rem;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .main {
+    order: 1;
+  }
+  .sidebar {
+    order: 2;
+  }
+}
